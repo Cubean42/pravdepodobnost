@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Simulácie{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Domov</a>
+        <a href="/sims/circle">Kruh v štvorci</a>
+        <a href="/sims/dice">Kocky</a>
+        <a href="/sims/monty">Monty-Hall</a>
+        <a href="/sims/balls">Guličky z klobúka</a>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Kocky{% endblock %}
+
+{% block content %}
+
+<h1>Kocky</h1>
+
+<h2>Počet pokusov simulácie:</h2>
+
+<input type="number" id="number"
+       placeholder="Zadaj počet pokusov" min="1">
+
+<h2>Počet strán na kocke:</h2>
+
+<div id="diceList">
+    <button type="button" class="dice-face" data-sides="4">4</button>
+    <button type="button" class="dice-face" data-sides="6">6</button>
+    <button type="button" class="dice-face" data-sides="8">8</button>
+    <button type="button" class="dice-face" data-sides="10">10</button>
+    <button type="button" class="dice-face" data-sides="12">12</button>
+</div>
+
+<input type="hidden" id="sides" value="6">
+
+<h2>Hod, ktorý hľadáme:</h2>
+
+<input type="number" id="asked"
+       placeholder="Zadaj hod, ktorý hľadáme" min="1" max="6">
+
+<button onclick="runProgram()">Spusti</button>
+
+<br><br>
+
+<canvas id="graphCanvas" width="500" height="400"></canvas>
+<pre id="output"></pre>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{{ url_for('static', filename='js/dice.js') }}"></script>
+
+{% endblock %}

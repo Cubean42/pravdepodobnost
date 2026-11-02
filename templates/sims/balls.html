@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Guličky z klobúka{% endblock %}
+
+{% block content %}
+
+<h1>Guličky z klobúka</h1>
+
+<h2>Počet pokusov simulácie:</h2>
+
+<input type="number" id="number"
+       placeholder="Zadaj počet pokusov" min="1">
+
+<h2>Počet dobrých guličiek:</h2>
+
+<input type="number" id="good"
+       placeholder="Zadaj počet dobrých guličiek" min="1">
+
+<h2>Počet zlých guličiek:</h2>
+
+<input type="number" id="bad"
+       placeholder="Zadaj počet zlých guličiek" min="1">
+
+<button onclick="runProgram()">Spusti</button>
+
+<br><br>
+
+<canvas id="graphCanvas" width="500" height="400"></canvas>
+<pre id="output"></pre>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{{ url_for('static', filename='js/balls.js') }}"></script>
+
+{% endblock %}

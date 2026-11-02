@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Domov{% endblock %}
+
+{% block content %}
+
+<h1>Pravdepodobnostné simulácie</h1>
+
+<p>Vyber si simuláciu:</p>
+
+<ul>
+    <li>
+        <a href="/sims/circle">
+            Kruh v štvorci
+        </a>
+    </li>
+
+    <li>
+        <a href="/sims/dice">
+            Kocky
+        </a>
+    </li>
+
+    <li>
+        <a href="/sims/monty">
+            Monty-Hall
+        </a>
+    </li>
+
+    <li>
+        <a href="/sims/balls">
+            Guličky z klobúka
+        </a>
+    </li>
+</ul>
+
+{% endblock %}
