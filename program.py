@@ -80,7 +80,7 @@ def monty_main(number, update_output):
 
         update_output(text, vytiahnutia.copy())
 
-def dice_main(number, sides, asked, update_output):
+def dice_main(number, sides, update_output, asked = 6):
     pocet = 0
     
     rolls = []

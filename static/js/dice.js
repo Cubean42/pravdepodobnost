@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             sidesInput.value = this.dataset.sides;
 
             // Update maximum value of the asked input
-            document.getElementById("asked").max = sidesInput.value;
+            //document.getElementById("asked").max = sidesInput.value;
         });
     });
 });
@@ -31,7 +31,7 @@ function drawDiceGraph(rolls) {
     const ctx = canvas.getContext("2d");
 
     const sides = parseInt(document.getElementById("sides").value);
-    const asked = parseInt(document.getElementById("asked").value);
+    //const asked = parseInt(document.getElementById("asked").value);
     const total = rolls.length;
 
     // Calculate probabilities
@@ -42,7 +42,7 @@ function drawDiceGraph(rolls) {
     });
 
     const labels = Array.from({ length: sides }, (_, i) => i + 1);
-    const colors = labels.map(i => i === asked ? "green" : "steelblue");
+    //const colors = labels.map(i => i === asked ? "green" : "steelblue");
 
     // Graph dimensions
     const marginLeft = 50;
@@ -93,7 +93,8 @@ function drawDiceGraph(rolls) {
         const y = canvas.height - marginBottom - barHeight;
 
         // Bar
-        ctx.fillStyle = colors[i];
+        //ctx.fillStyle = colors[i];
+        ctx.fillStyle = "steelblue";
         ctx.fillRect(x, y, barWidth, barHeight);
 
         // Percentage above bar
@@ -115,12 +116,12 @@ function drawDiceGraph(rolls) {
 function runProgram() {
     const number = document.getElementById("number").value;
     const sides = document.getElementById("sides").value;
-    const asked = document.getElementById("asked").value;
+    //const asked = document.getElementById("asked").value;
 
     const source = new EventSource(
         "/run/dice?number=" + encodeURIComponent(number) +
-        "&sides=" + encodeURIComponent(sides) +
-        "&asked=" + encodeURIComponent(asked)
+        "&sides=" + encodeURIComponent(sides) //+
+        //"&asked=" + encodeURIComponent(asked)
     );
 
     source.onmessage = function(event) {

@@ -67,7 +67,7 @@ def dice():
 def run_dice():
     number = int(request.args.get("number"))
     sides = int(request.args.get("sides"))
-    asked = int(request.args.get("asked"))
+    #asked = int(request.args.get("asked"))
 
     updates = queue.Queue()
 
@@ -79,7 +79,7 @@ def run_dice():
 
     def worker():
         try:
-            dice_main(number, sides, asked, callback)
+            dice_main(number, sides, callback)
         except Exception as e:
             updates.put({"error": str(e)})
         finally:
